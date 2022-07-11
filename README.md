@@ -106,6 +106,8 @@ wget http://localhost:8080/download/bulk_data_sources/cdr?quarter=20090630
 
 - H/T to `henningn` who forked the current `selenium` docker image to work on `arm64` / Apple Silicon.
 
+- `CDR` file downloadd output can be .6GB to 1GB, and UBPR can be 1GB - 4GB, depending on quarter.
+
 ## Known Issues
 - The underlying UI for the FFIEC can site be a bit wonky. If you receive a 500 error, try again, and a resubmitted request is likely to succeed.
 
