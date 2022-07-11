@@ -52,6 +52,6 @@ build:
 	@echo "🚀 Building image for $(UNAME_M)"
 	docker build --platform=$(ARCH) . -t $(IMAGE_NAME) 
 
-test:
+server:
 	@echo "🚀 Testing image for $(UNAME_M)"
 	docker run --rm -it --entrypoint /bin/bash -v $(PWD)/code:/code -p 8080:8080 $(IMAGE_NAME)

@@ -26,20 +26,38 @@ def process_xbrl_file(file_name) -> str:
     files = zip_stream.filelist
     files_list = list(files)
 
-    test_data = zip_stream.open(files_list[1]).read()
+    tmp_file_name = '/tmp/' + str(uuid4())
+
+    # write an opening bracket to the temp_file_name
+    with open(tmp_file_name, 'w') as f:
+        f.write('[')
 
     all_data = []
-    for file in tqdm(files_list):
+    for i, file in tqdm(enumerate(files_list)):
         if file.filename.endswith('.xml'):
             if 'RSSD' in file.filename:
                 data = zip_stream.open(file).read()
                 try:
-                    all_data.append(process_xml(data))
+                    all_data.append(process_xml(data, tmp_file_name))
+                
+                    # is this the last file?
+                    if file == len(files_list)-1:
+                        # write a closing bracket to the temp_file_name
+                        with open(tmp_file_name, 'a') as f:
+                            f.write(']')
+                    else:
+                        # write a comma to the temp_file_name
+                        with open(tmp_file_name, 'a') as f:
+                            f.write(',')
+
                 except:
                     print(f"Error processing {file}")
                     continue
 
-    return json.dumps(list(itertools.chain(*all_data)))
+    # return the text contained within the tmp_file_name
+    ret_str = open(tmp_file_name, 'r').read()
+    os.remove(tmp_file_name)
+    return ret_str
 
 def process_date_tuple(dt):
     return f"{str(dt[0]).zfill(4)}-{str(dt[1]).zfill(2)}-{str(dt[2]).zfill(2)}"
@@ -51,7 +69,7 @@ def return_dt(file_name):
 def dict_to_array(adict, col):
     return [r[col] for r in adict]
 
-def process_xml(data):
+def process_xml(data, tmp_file_name):
 
     ## embedding for use in ray
     def process_xbrl_item(name, items):
@@ -129,5 +147,9 @@ def process_xml(data):
         ret_data.append(new_dict)
 
     
-    return ret_data
+    # write the data to the temp_file_name
+    with open(tmp_file_name, 'a') as f:
+        f.write(json.dumps(ret_data))
+
+    return
 

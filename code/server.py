@@ -31,33 +31,36 @@ def return_cdr_dates():
 
     return return_dict
 
-@app.route("/query/bulk_data_sources/ubpr")
-def return_ubpr_dates():
+# @app.route("/query/bulk_data_sources/ubpr")
+# def return_ubpr_dates():
     
-    browser = init_browser.return_browser()
+#     browser = init_browser.return_browser()
 
-    last_updated_date = last_updated.get_last_updated(browser, source_data="UBPR")
+#     last_updated_date = last_updated.get_last_updated(browser, source_data="UBPR")
     
-    return_dict = {
-        "last_updated": last_updated_date,
-        "quarters": download_dates.populate_download_options(browser, source_data="UBPR")
-    }
+#     return_dict = {
+#         "last_updated": last_updated_date,
+#         "quarters": download_dates.populate_download_options(browser, source_data="UBPR")
+#     }
 
-    return return_dict
+#     return return_dict
 
 
 def download_from_data_source(data_source, quarter):
 
     tmp_dir = '/tmp/' + str(uuid4())
+    os.mkdir(tmp_dir)
 
     browser = init_browser.return_browser(tmp_dir)
-
 
     # download the filedo
 
     ret_str = download_file.init_download(browser, data_source=data_source, quarter=quarter, format=format, download_loc=tmp_dir)
 
-    return str
+    # delete the do
+    shutil.rmtree(tmp_dir)
+
+    return ret_str
 
 @app.route("/download/bulk_data_sources/cdr")
 def return_cdr_file():
@@ -77,17 +80,14 @@ def return_cdr_file():
     response = Response(ret_str)
     response.headers['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
     response.headers['Content-Type'] = 'application/json'
-    response.headers['Content-Length'] = ret_str.__len__()
+    response.headers['Content-Length'] = len(ret_str)
     response.headers['Cache-Control'] = 'no-cache, must-revalidate'
 
-    # delete the do
-    shutil.rmtree(tmp_dir)
 
     return response
 
 @app.route("/download/bulk_data_sources/ubpr")
 def return_ubpr_file():
-
 
     quarter = None
  
@@ -105,10 +105,8 @@ def return_ubpr_file():
     response = Response(ret_str)
     response.headers['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
     response.headers['Content-Type'] = 'application/json'
-    response.headers['Content-Length'] = ret_str.__len__()
+    response.headers['Content-Length'] =  len(ret_str)
     response.headers['Cache-Control'] = 'no-cache, must-revalidate'
 
-    # delete the do
-    shutil.rmtree(tmp_dir)
 
     return response

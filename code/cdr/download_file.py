@@ -42,7 +42,6 @@ def init_download(browser, data_source, quarter, format, download_loc):
 
     attempt_nums = 0
 
-
     year_list_box = None
 
     while year_list_box is None:
