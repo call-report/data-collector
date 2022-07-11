@@ -21,7 +21,7 @@ __🚨 The RESTful server is intended only for single-user use, and not as an in
 These steps will start a local server running on localhost to which requests may be submitted.
 
 1. Clone the repo
-2. Build the container: `make build`
+2. Build the container: `make`
 3. Run the RESTful server: `make serve`'
    1. Defaults to `localhost:8080`
 
