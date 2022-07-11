@@ -1,0 +1,116 @@
+1657556415560	geckodriver	INFO	Listening on 127.0.0.1:36973
+1657556415565	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44447" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileT0HiBT"
+Unable to init server: Could not connect: Connection refused
+Error: cannot open display: :99.0
+1657556453087	geckodriver	INFO	Listening on 127.0.0.1:59593
+1657556453092	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "41413" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileuwozeM"
+Unable to init server: Could not connect: Connection refused
+Error: cannot open display: :99.0
+1657556657875	geckodriver	INFO	Listening on 127.0.0.1:52403
+1657556657881	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "35609" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilejc7skr"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.144124) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.144124) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.144472) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.144124) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.144472) |[2][GFX1-]: glxtest: libEGL missing (t=0.144706) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.144124) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.144472) |[2][GFX1-]: glxtest: libEGL missing (t=0.144706) |[3][GFX1-]: No GPUs detected via PCI (t=0.144902) [GFX1-]: No GPUs detected via PCI
+1657556658041	Marionette	INFO	Marionette enabled
+1657556658043	Marionette	INFO	Listening on port 33589
+WebDriver BiDi listening on ws://localhost:35609
+Read port: 33589
+1657556658153	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.144124) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.144472) |[2][GFX1-]: glxtest: libEGL missing (t=0.144706) |[3][GFX1-]: No GPUs detected via PCI (t=0.144902) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.469993) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilejc7skr/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:35609/devtools/browser/0681702d-6f70-46dc-b55d-340b33680525
+1657556693419	geckodriver	INFO	Listening on 127.0.0.1:56517
+1657556693424	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "51847" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0tuwPd"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.130821) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.130821) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.131163) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.130821) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.131163) |[2][GFX1-]: glxtest: libEGL missing (t=0.131385) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.130821) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.131163) |[2][GFX1-]: glxtest: libEGL missing (t=0.131385) |[3][GFX1-]: No GPUs detected via PCI (t=0.131617) [GFX1-]: No GPUs detected via PCI
+1657556693570	Marionette	INFO	Marionette enabled
+1657556693573	Marionette	INFO	Listening on port 33857
+WebDriver BiDi listening on ws://localhost:51847
+Read port: 33857
+1657556693707	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.130821) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.131163) |[2][GFX1-]: glxtest: libEGL missing (t=0.131385) |[3][GFX1-]: No GPUs detected via PCI (t=0.131617) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.410978) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0tuwPd/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:51847/devtools/browser/72945ce5-4831-4d8e-900f-dc9099af01e3
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+1657557944457	geckodriver	INFO	Listening on 127.0.0.1:52559
+1657557944461	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "51931" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilel1zVqH"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.128143) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.128143) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.128411) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.128143) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.128411) |[2][GFX1-]: glxtest: libEGL missing (t=0.128623) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.128143) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.128411) |[2][GFX1-]: glxtest: libEGL missing (t=0.128623) |[3][GFX1-]: No GPUs detected via PCI (t=0.128809) [GFX1-]: No GPUs detected via PCI
+1657557944618	Marionette	INFO	Marionette enabled
+1657557944621	Marionette	INFO	Listening on port 37069
+WebDriver BiDi listening on ws://localhost:51931
+Read port: 37069
+1657557944731	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.128143) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.128411) |[2][GFX1-]: glxtest: libEGL missing (t=0.128623) |[3][GFX1-]: No GPUs detected via PCI (t=0.128809) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.41357) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilel1zVqH/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:51931/devtools/browser/7742e198-c8b2-4860-ad2f-4dd1ee830b83
+1657557985658	geckodriver	INFO	Listening on 127.0.0.1:53921
+1657557986182	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "47639" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOfFhE3"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.180889) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.180889) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.181247) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.180889) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.181247) |[2][GFX1-]: glxtest: libEGL missing (t=0.18149) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.180889) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.181247) |[2][GFX1-]: glxtest: libEGL missing (t=0.18149) |[3][GFX1-]: No GPUs detected via PCI (t=0.181725) [GFX1-]: No GPUs detected via PCI
+1657557986384	Marionette	INFO	Marionette enabled
+1657557986387	Marionette	INFO	Listening on port 37617
+WebDriver BiDi listening on ws://localhost:47639
+Read port: 37617
+1657557986528	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.180889) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.181247) |[2][GFX1-]: glxtest: libEGL missing (t=0.18149) |[3][GFX1-]: No GPUs detected via PCI (t=0.181725) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.468335) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOfFhE3/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:47639/devtools/browser/ac221c15-0b11-4328-9fb0-9813fd459195
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+1657558157585	geckodriver	INFO	Listening on 127.0.0.1:40701
+1657558157588	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "36339" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1x6hOb"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.13916) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.13916) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.139558) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.13916) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.139558) |[2][GFX1-]: glxtest: libEGL missing (t=0.139831) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.13916) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.139558) |[2][GFX1-]: glxtest: libEGL missing (t=0.139831) |[3][GFX1-]: No GPUs detected via PCI (t=0.140102) [GFX1-]: No GPUs detected via PCI
+1657558157733	Marionette	INFO	Marionette enabled
+1657558157736	Marionette	INFO	Listening on port 44077
+WebDriver BiDi listening on ws://localhost:36339
+Read port: 44077
+1657558157874	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.13916) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.139558) |[2][GFX1-]: glxtest: libEGL missing (t=0.139831) |[3][GFX1-]: No GPUs detected via PCI (t=0.140102) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.441556) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1x6hOb/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:36339/devtools/browser/f6395ea1-d9d7-4431-84dc-9b5f843bf382
+Exiting due to channel error.
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=33.5216) Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=34.4789) 1657558193064	geckodriver	INFO	Listening on 127.0.0.1:53493
+1657558193067	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "42845" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileJrrdv7"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.138161) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.138161) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.138663) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.138161) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.138663) |[2][GFX1-]: glxtest: libEGL missing (t=0.139034) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.138161) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.138663) |[2][GFX1-]: glxtest: libEGL missing (t=0.139034) |[3][GFX1-]: No GPUs detected via PCI (t=0.139367) [GFX1-]: No GPUs detected via PCI
+1657558193225	Marionette	INFO	Marionette enabled
+1657558193228	Marionette	INFO	Listening on port 43361
+WebDriver BiDi listening on ws://localhost:42845
+Read port: 43361
+1657558193305	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.138161) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.138663) |[2][GFX1-]: glxtest: libEGL missing (t=0.139034) |[3][GFX1-]: No GPUs detected via PCI (t=0.139367) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.463247) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJrrdv7/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:42845/devtools/browser/51802959-87fb-48a6-bc87-ac2af154e50e
