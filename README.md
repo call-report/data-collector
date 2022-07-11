@@ -22,7 +22,7 @@ These steps will start a local server running on localhost to which requests may
 
 1. Clone the repo
 2. Build the container: `make`
-3. Run the RESTful server: `make serve`'
+3. Run the RESTful server: `make serve`
    1. Defaults to `localhost:8080`
 
 ## Overview
