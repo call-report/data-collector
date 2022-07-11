@@ -104,6 +104,8 @@ wget http://localhost:8080/download/bulk_data_sources/cdr?quarter=20090630
 ## Notes
 - Depending on the speed of your internet connection and the speed of your computer, download and processing time can range from 60 seconds to 10 minutes. Currently, there is no indicator regarding the status of the download and ETL process.
 
+- H/T to `henningn` who forked the current `selenium` docker image to work on `arm64` / Apple Silicon.
+
 ## Known Issues
 - The underlying UI for the FFIEC can site be a bit wonky. If you receive a 500 error, try again, and a resubmitted request is likely to succeed.
 
