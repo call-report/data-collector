@@ -2,11 +2,11 @@ UNAME_M := $(shell uname -m)
 UNAME = $(shell uname)
 IMAGE_NAME = call-report-data-collector
 
-.PHONY = default
-
+.PHONY = all
 
 all: check-windows check-nix build
 
+.PHONY: check-windows
 check-windows:
 
 ifdef $(OS)
@@ -17,6 +17,7 @@ else
 	@echo "👁️  Detecting OS and architecture..."
 endif 
 
+.PHONY = check-nix
 check-nix:
 
 ifeq ($(UNAME),Linux)
@@ -47,11 +48,12 @@ else
 endif
 
 .PHONY = build
+.PHONY = serve
 
 build:
 	@echo "🚀 Building image for $(UNAME_M)"
 	docker build --platform=$(ARCH) . -t $(IMAGE_NAME) 
 
-server:
+serve:
 	@echo "🚀 Testing image for $(UNAME_M)"
 	docker run --rm -it --entrypoint /bin/bash -v $(PWD)/code:/code -p 8080:8080 $(IMAGE_NAME)
