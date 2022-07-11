@@ -46,16 +46,24 @@ def return_ubpr_dates():
     return return_dict
 
 
-@app.route("/download/bulk_data_sources/cdr")
-def download_cdr_file():
+def download_from_data_source(data_source, quarter):
 
     tmp_dir = '/tmp/' + str(uuid4())
 
     browser = init_browser.return_browser(tmp_dir)
 
-    quarter = None
-    format = None
 
+    # download the filedo
+
+    ret_str = download_file.init_download(browser, data_source=data_source, quarter=quarter, format=format, download_loc=tmp_dir)
+
+    return str
+
+@app.route("/download/bulk_data_sources/cdr")
+def return_cdr_file():
+
+    quarter = None
+ 
     # check for query string parameter named "quarter"
     if "quarter" in request.args:
         quarter = request.args["quarter"]
@@ -64,11 +72,36 @@ def download_cdr_file():
         # return 400 error if no quarter is specified
         return """A query string parameter named "quarter" is required for this request""", 400
 
-    # download the filedo
-
-    ret_str = download_file.init_download(browser, data_source="CDR", quarter=quarter, format=format, download_loc=tmp_dir)
-    
+    ret_str = download_from_data_source("CDR", quarter)
     file_name = "cdr-{}.json".format(quarter)
+    response = Response(ret_str)
+    response.headers['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+    response.headers['Content-Type'] = 'application/json'
+    response.headers['Content-Length'] = ret_str.__len__()
+    response.headers['Cache-Control'] = 'no-cache, must-revalidate'
+
+    # delete the do
+    shutil.rmtree(tmp_dir)
+
+    return response
+
+@app.route("/download/bulk_data_sources/ubpr")
+def return_ubpr_file():
+
+
+    quarter = None
+ 
+    # check for query string parameter named "quarter"
+    if "quarter" in request.args:
+        quarter = request.args["quarter"]
+
+    if quarter is None:
+        # return 400 error if no quarter is specified
+        return """A query string parameter named "quarter" is required for this request""", 400
+
+
+    ret_str = download_from_data_source("UBPR", quarter)
+    file_name = "upbr-{}.json".format(quarter)
     response = Response(ret_str)
     response.headers['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
     response.headers['Content-Type'] = 'application/json'

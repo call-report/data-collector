@@ -11,6 +11,7 @@ from hashlib import sha256
 from uuid import uuid4
 import hashlib
 import time
+import itertools
 from zipfile import ZipFile
 
 re_date = re.compile('[0-9]{4}\-[0-9]{2}\-[0-9]{2}')
@@ -38,7 +39,7 @@ def process_xbrl_file(file_name) -> str:
                     print(f"Error processing {file}")
                     continue
 
-    return json.dumps(all_data[0])
+    return json.dumps(list(itertools.chain(*all_data)))
 
 def process_date_tuple(dt):
     return f"{str(dt[0]).zfill(4)}-{str(dt[1]).zfill(2)}-{str(dt[2]).zfill(2)}"

@@ -1679,3 +1679,126 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 [Parent 28809, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /build/firefox-xWqzft/firefox-102.0+build2/toolkit/xre/nsSigHandlers.cpp:167
 
 (firefox:28809): GLib-GObject-CRITICAL **: 19:38:38.104: g_object_get: assertion 'G_IS_OBJECT (object)' failed
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=134.211) Exiting due to channel error.
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=135.18) Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=135.222) 1657568426778	geckodriver	INFO	Listening on 127.0.0.1:52743
+1657568427291	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "54713" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileX3YYoJ"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.156402) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.156402) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.156796) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.156402) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.156796) |[2][GFX1-]: glxtest: libEGL missing (t=0.15712) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.156402) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.156796) |[2][GFX1-]: glxtest: libEGL missing (t=0.15712) |[3][GFX1-]: No GPUs detected via PCI (t=0.157393) [GFX1-]: No GPUs detected via PCI
+1657568427465	Marionette	INFO	Marionette enabled
+1657568427468	Marionette	INFO	Listening on port 40957
+WebDriver BiDi listening on ws://localhost:54713
+Read port: 40957
+1657568427526	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.156402) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.156796) |[2][GFX1-]: glxtest: libEGL missing (t=0.15712) |[3][GFX1-]: No GPUs detected via PCI (t=0.157393) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.482196) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileX3YYoJ/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:54713/devtools/browser/8e2675b4-e6bc-4607-ae28-8983fe7b0a4d
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+[Parent 30712, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /build/firefox-xWqzft/firefox-102.0+build2/toolkit/xre/nsSigHandlers.cpp:167
+
+(firefox:30712): GLib-GObject-CRITICAL **: 19:41:00.392: g_object_get: assertion 'G_IS_OBJECT (object)' failed
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=199.153) Exiting due to channel error.
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=200.152) 1657568734167	geckodriver	INFO	Listening on 127.0.0.1:33841
+1657568734672	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "37899" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileQB8zN1"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.153527) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.153527) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.153914) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.153527) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.153914) |[2][GFX1-]: glxtest: libEGL missing (t=0.154172) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.153527) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.153914) |[2][GFX1-]: glxtest: libEGL missing (t=0.154172) |[3][GFX1-]: No GPUs detected via PCI (t=0.154419) [GFX1-]: No GPUs detected via PCI
+1657568734844	Marionette	INFO	Marionette enabled
+1657568734847	Marionette	INFO	Listening on port 41341
+WebDriver BiDi listening on ws://localhost:37899
+Read port: 41341
+1657568734910	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.153527) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.153914) |[2][GFX1-]: glxtest: libEGL missing (t=0.154172) |[3][GFX1-]: No GPUs detected via PCI (t=0.154419) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.49425) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQB8zN1/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:37899/devtools/browser/fcea5abc-6482-4152-855c-35f2d04c04cc
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+[Parent 34264, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /build/firefox-xWqzft/firefox-102.0+build2/toolkit/xre/nsSigHandlers.cpp:167
+
+(firefox:34264): GLib-GObject-CRITICAL **: 19:46:06.900: g_object_get: assertion 'G_IS_OBJECT (object)' failed
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=253.89) Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=254.897) Exiting due to channel error.
+1657569008110	geckodriver	INFO	Listening on 127.0.0.1:55753
+1657569008622	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "38565" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilel2pP8q"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.146975) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.146975) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.147383) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.146975) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.147383) |[2][GFX1-]: glxtest: libEGL missing (t=0.147708) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.146975) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.147383) |[2][GFX1-]: glxtest: libEGL missing (t=0.147708) |[3][GFX1-]: No GPUs detected via PCI (t=0.148008) [GFX1-]: No GPUs detected via PCI
+1657569008789	Marionette	INFO	Marionette enabled
+1657569008792	Marionette	INFO	Listening on port 32925
+WebDriver BiDi listening on ws://localhost:38565
+Read port: 32925
+1657569008857	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.146975) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.147383) |[2][GFX1-]: glxtest: libEGL missing (t=0.147708) |[3][GFX1-]: No GPUs detected via PCI (t=0.148008) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.485103) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilel2pP8q/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:38565/devtools/browser/782d3ebc-98c4-4bc0-b0a0-788f95c580c9
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=27.9341) Exiting due to channel error.
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=28.8888) Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Receive IPC close with reason=AbnormalShutdown (t=28.9408) 1657569040317	geckodriver	INFO	Listening on 127.0.0.1:52147
+1657569040829	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "55757" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile9YnvFn"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.184684) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.184684) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.185214) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.184684) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.185214) |[2][GFX1-]: glxtest: libEGL missing (t=0.185496) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.184684) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.185214) |[2][GFX1-]: glxtest: libEGL missing (t=0.185496) |[3][GFX1-]: No GPUs detected via PCI (t=0.185794) [GFX1-]: No GPUs detected via PCI
+1657569041037	Marionette	INFO	Marionette enabled
+1657569041041	Marionette	INFO	Listening on port 40095
+WebDriver BiDi listening on ws://localhost:55757
+Read port: 40095
+1657569041208	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.184684) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.185214) |[2][GFX1-]: glxtest: libEGL missing (t=0.185496) |[3][GFX1-]: No GPUs detected via PCI (t=0.185794) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.526959) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile9YnvFn/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:55757/devtools/browser/4a62e13f-9142-48b8-8f1a-6a1371d2a61c
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+[Parent 37887, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /build/firefox-xWqzft/firefox-102.0+build2/toolkit/xre/nsSigHandlers.cpp:167
+
+(firefox:37887): GLib-GObject-CRITICAL **: 19:52:00.538: g_object_get: assertion 'G_IS_OBJECT (object)' failed
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1657569342012	geckodriver	INFO	Listening on 127.0.0.1:35047
+1657569342519	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "48047" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile3qJse5"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.210718) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.210718) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.211081) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.210718) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.211081) |[2][GFX1-]: glxtest: libEGL missing (t=0.211298) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.210718) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.211081) |[2][GFX1-]: glxtest: libEGL missing (t=0.211298) |[3][GFX1-]: No GPUs detected via PCI (t=0.211509) [GFX1-]: No GPUs detected via PCI
+1657569342770	Marionette	INFO	Marionette enabled
+1657569342773	Marionette	INFO	Listening on port 33539
+WebDriver BiDi listening on ws://localhost:48047
+Read port: 33539
+1657569342858	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.210718) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.211081) |[2][GFX1-]: glxtest: libEGL missing (t=0.211298) |[3][GFX1-]: No GPUs detected via PCI (t=0.211509) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.621461) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile3qJse5/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:48047/devtools/browser/e8ea7eaa-bc1a-4270-87d5-35cde4e57bbb
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
