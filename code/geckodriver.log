@@ -2454,3 +2454,26 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 [Parent 27715, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /build/firefox-xWqzft/firefox-102.0+build2/toolkit/xre/nsSigHandlers.cpp:167
 
 (firefox:27715): GLib-GObject-CRITICAL **: 21:25:31.855: g_object_get: assertion 'G_IS_OBJECT (object)' failed
+1657574884651	geckodriver	INFO	Listening on 127.0.0.1:43851
+1657574885174	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--disable-gpu" "--remote-debugging-port" "49545" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5srOUd"
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.208254) [GFX1-]: glxtest: libpci missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.208254) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.208689) [GFX1-]: glxtest: Unable to open a connection to the X server
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.208254) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.208689) |[2][GFX1-]: glxtest: libEGL missing (t=0.209006) [GFX1-]: glxtest: libEGL missing
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.208254) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.208689) |[2][GFX1-]: glxtest: libEGL missing (t=0.209006) |[3][GFX1-]: No GPUs detected via PCI (t=0.209274) [GFX1-]: No GPUs detected via PCI
+1657574885400	Marionette	INFO	Marionette enabled
+1657574885403	Marionette	INFO	Listening on port 39835
+WebDriver BiDi listening on ws://localhost:49545
+Read port: 39835
+1657574885570	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: libpci missing (t=0.208254) |[1][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.208689) |[2][GFX1-]: glxtest: libEGL missing (t=0.209006) |[3][GFX1-]: No GPUs detected via PCI (t=0.209274) |[4][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.552626) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5srOUd/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:49545/devtools/browser/e37306a2-a8be-43a5-bd8c-250ddbe38dfe
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://cdr.ffiec.gov"
+[Parent 31122, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /build/firefox-xWqzft/firefox-102.0+build2/toolkit/xre/nsSigHandlers.cpp:167
+
+(firefox:31122): GLib-GObject-CRITICAL **: 21:30:23.353: g_object_get: assertion 'G_IS_OBJECT (object)' failed

@@ -2,6 +2,8 @@
 
 ## Quick Start
 
+_This repo is in an "alpha" state_
+
 Starts a self-contained docker container containing a RESTful server that interacts with the FFIEC's bulk download facility, allowing for simple GET-based requests for very large datasets.
 
 ### Prerequisites
