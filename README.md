@@ -101,6 +101,18 @@ Downloads a quarterly CDR dataset, returning the JSON representation of the data
 wget http://localhost:8080/download/bulk_data_sources/cdr?quarter=20090630
 ```
 
+### `/download/mdrm/data_dictionary`
+
+Downloads, processes, and imports MDRM data dictionary
+
+_This endpoint should return data within 60 seconds_
+
+#### Example
+
+```
+wget http://localhost:8080/download/mdrm/data_dictionary
+```
+
 ## Notes
 - Depending on the speed of your internet connection and the speed of your computer, download and processing time can range from 60 seconds to 10 minutes. Currently, there is no indicator regarding the status of the download and ETL process.
 
