@@ -6,25 +6,10 @@ RUN apt install python3-pip -y
 RUN pip install ipython
 RUN pip install selenium
 RUN pip install flask
+RUN pip install tqdm
+RUN pip install xmltodict
+RUN pip install requests
+RUN pip install pandas
 USER seluser
-# RUN apt update
-# RUN apt install dialog apt-utils -y
-# RUN apt -y upgrade
-# RUN apt install wget bzip2 -y
-# WORKDIR /root
-
-# RUN apt install -y gnupg
-# RUN apt install -y tzdata
-
-
-
-# RUN apt install python3-pip -y
-# RUN pip3 install tqdm
-# RUN pip3 install selenium
-# RUN pip3 install boto3
-
-
-# RUN apt remove python3-pip -y
-# RUN apt autoremove -y
-# COPY $PWD/code/main.py /root/main.py
-# CMD ["python3","/root/main.py"]
+WORKDIR /code
+CMD [ "flask" , "run" , "--port", "8080", "--host","0.0.0.0"]

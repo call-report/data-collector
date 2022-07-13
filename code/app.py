@@ -1,10 +1,12 @@
 from flask import Flask, request, Response
 from cdr import download_dates, last_updated, download_file
 from browser import init_browser
+from mdrm_dict import mdrm_processes
 import json
 from uuid import uuid4
 import os
 import shutil
+import datetime
 
 app = Flask(__name__)
 browser = None
@@ -108,5 +110,24 @@ def return_ubpr_file():
     response.headers['Content-Length'] =  len(ret_str)
     response.headers['Cache-Control'] = 'no-cache, must-revalidate'
 
+    return response
 
+@app.route("/download/mdrm/data_dictionary")
+def download_mdrm_data_dictionary():
+    # collect the current date
+    today = str(datetime.date.today())
+    print("collecting data dictionary for mdrm")
+    file_name = "mdrm_data_dict-{}.json".format(today)
+    ret_str = mdrm_processes.return_json_mdrm_record()
+    response = Response(ret_str)
+    response.headers['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+    response.headers['Content-Type'] = 'application/json'
+    response.headers['Content-Length'] =  len(ret_str)
+    response.headers['Cache-Control'] = 'no-cache, must-revalidate'
+    
+    return response
+    
+@app.route("/ping")
+def ping():
+    response = Response("pong")
     return response

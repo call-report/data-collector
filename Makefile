@@ -54,6 +54,10 @@ build:
 	@echo "🚀 Building image for $(UNAME_M)"
 	docker build --platform=$(ARCH) . -t $(IMAGE_NAME) 
 
+cli:
+	@echo "🚀  starting shell prompt $(UNAME_M)"
+	docker run -it --entrypoint /bin/bash -v $(PWD)/code:/code -p 8080:8080 $(IMAGE_NAME)
+
 serve:
-	@echo "🚀 Testing image for $(UNAME_M)"
-	docker run --rm -it --entrypoint /bin/bash -v $(PWD)/code:/code -p 8080:8080 $(IMAGE_NAME)
+	@echo "🚀  serving at port 8080 $(UNAME_M)"
+	docker run -v $(PWD)/code:/code -p 8080:8080 $(IMAGE_NAME)
