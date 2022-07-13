@@ -1,0 +1,1 @@
+{"buildTargets":["all","build","check-nix","check-windows","serve"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

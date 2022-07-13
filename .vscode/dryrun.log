@@ -1,0 +1,10 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/michael/Development/call.report/data-collector'
+echo "✅ This makefile is probably running on a Linux or MacOS system."
+echo "👁️  Detecting OS and architecture..."
+echo "🍏 Running MacOS"
+echo "💻 Running on aarch64"
+echo "🚀 Building image for arm64"
+docker build --platform=arm64 . -t call-report-data-collector 
+make: Leaving directory `/Users/michael/Development/call.report/data-collector'
+ 
