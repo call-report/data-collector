@@ -13,14 +13,28 @@ A lightweight Python library for collecting bulk FFIEC CDR data. Direct HTTP imp
 
 ## Installation
 
-### Using pip
+### Release Candidate (Current)
+
+```bash
+# Install the latest release candidate
+pip install --pre ffiec-data-collector
+
+# Or install specific RC version
+pip install ffiec-data-collector==2.0.0rc1
+```
+
+Using uv:
+```bash
+uv add ffiec-data-collector==2.0.0rc1
+```
+
+### Stable Release (Future)
 
 ```bash
 pip install ffiec-data-collector
 ```
 
-### Using uv (recommended for faster installs)
-
+Using uv:
 ```bash
 uv add ffiec-data-collector
 ```
@@ -29,15 +43,15 @@ uv add ffiec-data-collector
 
 Using pip:
 ```bash
-git clone https://github.com/call-report/ffiec-data-collector.git
-cd ffiec-data-collector
+git clone https://github.com/call-report/data-collector.git
+cd data-collector
 pip install -e .
 ```
 
 Using uv:
 ```bash
-git clone https://github.com/call-report/ffiec-data-collector.git
-cd ffiec-data-collector
+git clone https://github.com/call-report/data-collector.git
+cd data-collector
 uv sync --dev
 ```
 

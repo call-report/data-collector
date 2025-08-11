@@ -11,7 +11,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="ffiec-data-collector",
-    version="2.0.0",
+    version="2.0.0rc1",
     author="Michael",
     description="Lightweight Python library for collecting bulk FFIEC CDR data",
     long_description=long_description,

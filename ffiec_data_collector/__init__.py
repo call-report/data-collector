@@ -5,7 +5,7 @@ A lightweight implementation for accessing FFIEC bulk data downloads with
 automatic last-updated date tracking.
 """
 
-__version__ = "2.0.0"
+__version__ = "2.0.0rc1"
 __author__ = "Michael"
 __email__ = "michael@civicforge.solutions"
 
