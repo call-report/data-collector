@@ -46,6 +46,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'testpypi'
     environment: testpypi
+    permissions:
+      id-token: write
     
     steps:
     - name: Download build artifacts
@@ -58,13 +60,14 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         repository-url: https://test.pypi.org/legacy/
-        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
 
   publish-pypi:
     needs: build
     runs-on: ubuntu-latest
     if: (github.event_name == 'release' && github.event.action == 'published') || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'pypi')
     environment: production
+    permissions:
+      id-token: write
     
     steps:
     - name: Download build artifacts
@@ -75,8 +78,6 @@ jobs:
     
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        password: ${{ secrets.PYPI_API_TOKEN }}
 
   verify-installation:
     needs: [publish-testpypi, publish-pypi]
