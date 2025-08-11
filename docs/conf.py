@@ -32,6 +32,9 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# Suppress specific warnings
+suppress_warnings = ['myst.xref_missing']
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
@@ -45,7 +48,6 @@ html_theme_options = {
     'canonical_url': 'https://ffiec-data-collector.readthedocs.io/',
     'analytics_id': '',
     'logo_only': False,
-    'display_version': True,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
     'vcs_pageview_mode': '',
