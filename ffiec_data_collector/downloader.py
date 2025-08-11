@@ -621,7 +621,11 @@ if __name__ == "__main__":
     # Example 3: Get available quarters for CDR
     cdr_info = downloader.get_bulk_data_sources_cdr()
     print(f"Latest CDR data: {cdr_info['published_date']}")
-    print(f"Available quarters: {len(cdr_info['available_quarters'])}")
+    quarters = cdr_info["available_quarters"]
+    if isinstance(quarters, list):
+        print(f"Available quarters: {len(quarters)}")
+    else:
+        print(f"Available quarters: {quarters}")
 
     # Example 4: Download without saving to disk (get content directly)
     from io import BytesIO
