@@ -478,6 +478,7 @@ if __name__ == "__main__":
             print("Testing validated downloader...")
             try:
                 from .downloader import Product
+
                 downloader = ValidatedFFIECDownloader()
                 # This will validate before attempting download
                 result = downloader.download_latest(Product.CALL_SINGLE)
