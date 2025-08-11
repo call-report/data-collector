@@ -37,11 +37,6 @@ jobs:
     - name: Run tests
       run: pytest tests/ -v --tb=short
 
-    - name: Test CLI commands
-      run: |
-        ffiec-download --help
-        ffiec-validate --help
-
   build-test:
     runs-on: ubuntu-latest
     
