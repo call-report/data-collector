@@ -1,7 +1,7 @@
 """
 FFIEC Data Collector - Modern Python library for downloading FFIEC data
 
-A lightweight implementation for accessing FFIEC bulk data downloads with 
+A lightweight implementation for accessing FFIEC bulk data downloads with
 automatic last-updated date tracking.
 """
 
@@ -15,7 +15,7 @@ from .downloader import (
     FileFormat,
     ReportingPeriod,
     DownloadRequest,
-    DownloadResult
+    DownloadResult,
 )
 
 from .thumbprint import (
@@ -23,7 +23,7 @@ from .thumbprint import (
     ValidatedFFIECDownloader,
     PageThumbprint,
     FormElement,
-    WebpageChangeException
+    WebpageChangeException,
 )
 
 __all__ = [
@@ -37,5 +37,5 @@ __all__ = [
     "ValidatedFFIECDownloader",
     "PageThumbprint",
     "FormElement",
-    "WebpageChangeException"
+    "WebpageChangeException",
 ]
