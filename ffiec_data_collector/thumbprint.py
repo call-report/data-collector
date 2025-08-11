@@ -9,7 +9,7 @@ import re
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Any
+from typing import Dict, List, Optional, Any
 import requests
 
 
@@ -356,12 +356,12 @@ class ThumbprintValidator:
             current_product_values = {p["value"] for p in current.products}
 
             if stored_product_values != current_product_values:
-                critical_changes.append(f"Product options changed")
+                critical_changes.append("Product options changed")
 
         # Critical: Download button changes
         if stored.download_button_ids and current.download_button_ids:
             if set(stored.download_button_ids) != set(current.download_button_ids):
-                critical_changes.append(f"Download button IDs changed")
+                critical_changes.append("Download button IDs changed")
 
         # Warning: JavaScript changes
         if stored.uses_dopostback != current.uses_dopostback:
@@ -477,6 +477,7 @@ if __name__ == "__main__":
             # Test with sample download
             print("Testing validated downloader...")
             try:
+                from .downloader import Product
                 downloader = ValidatedFFIECDownloader()
                 # This will validate before attempting download
                 result = downloader.download_latest(Product.CALL_SINGLE)
