@@ -41,6 +41,7 @@ dev = [
     "black>=22.0.0",
     "flake8>=5.0.0",
     "mypy>=0.990",
+    "types-requests>=2.25.0",
     "jupyter>=1.0.0",
     "notebook>=6.5.0",
     "build>=0.10.0",

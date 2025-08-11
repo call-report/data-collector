@@ -36,7 +36,7 @@ class Product(Enum):
         self._display_name = display_name
 
     @property
-    def value(self) -> str:
+    def form_value(self) -> str:
         return self._value
 
     @property
@@ -241,9 +241,9 @@ class FFIECDownloader:
         else:
             return None
 
-    def _post(self, data: Dict[str, str]) -> requests.Response:
+    def _post(self, data: Dict[str, Optional[str]]) -> requests.Response:
         """Make a POST request with proper headers"""
-        headers = self.session.headers.copy()
+        headers = dict(self.session.headers)
         headers.update(
             {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -291,12 +291,12 @@ class FFIECDownloader:
         if not self._viewstate:
             self.initialize()
 
-        data = {
+        data: Dict[str, Optional[str]] = {
             "__EVENTTARGET": "ctl00$MainContentHolder$ListBox1",
             "__EVENTARGUMENT": "",
             "__VIEWSTATE": self._viewstate,
             "__VIEWSTATEGENERATOR": self._viewstate_generator,
-            "ctl00$MainContentHolder$ListBox1": product.value,
+            "ctl00$MainContentHolder$ListBox1": product.form_value,
         }
 
         response = self._post(data)
@@ -336,12 +336,12 @@ class FFIECDownloader:
             # Convert string to ReportingPeriod
             period = self._find_period_by_date(period)
 
-        data = {
+        data: Dict[str, Optional[str]] = {
             "__EVENTTARGET": "ctl00$MainContentHolder$DatesDropDownList",
             "__EVENTARGUMENT": "",
             "__VIEWSTATE": self._viewstate,
             "__VIEWSTATEGENERATOR": self._viewstate_generator,
-            "ctl00$MainContentHolder$ListBox1": self._current_product.value,
+            "ctl00$MainContentHolder$ListBox1": self._current_product.form_value,
             "ctl00$MainContentHolder$DatesDropDownList": period.value,
         }
 
@@ -358,13 +358,15 @@ class FFIECDownloader:
         if not self._current_product or not self._current_period:
             raise ValueError("Must select product and period first")
 
-        data = {
+        data: Dict[str, Optional[str]] = {
             "__EVENTTARGET": f"ctl00$MainContentHolder${format.form_value}",
             "__EVENTARGUMENT": "",
             "__VIEWSTATE": self._viewstate,
             "__VIEWSTATEGENERATOR": self._viewstate_generator,
-            "ctl00$MainContentHolder$ListBox1": self._current_product.value,
-            "ctl00$MainContentHolder$DatesDropDownList": self._current_period.value,
+            "ctl00$MainContentHolder$ListBox1": self._current_product.form_value,
+            "ctl00$MainContentHolder$DatesDropDownList": (
+                self._current_period.value if self._current_period else None
+            ),
             "ctl00$MainContentHolder$FormatType": format.form_value,
         }
 
@@ -408,12 +410,14 @@ class FFIECDownloader:
         request = DownloadRequest(product=product, period=period, format=format)
 
         # Execute download
-        data = {
+        data: Dict[str, Optional[str]] = {
             "ctl00$MainContentHolder$TabStrip1$Download_0": "Download",
             "__VIEWSTATE": self._viewstate,
             "__VIEWSTATEGENERATOR": self._viewstate_generator,
-            "ctl00$MainContentHolder$ListBox1": product.value,
-            "ctl00$MainContentHolder$DatesDropDownList": self._current_period.value,
+            "ctl00$MainContentHolder$ListBox1": product.form_value,
+            "ctl00$MainContentHolder$DatesDropDownList": (
+                self._current_period.value if self._current_period else None
+            ),
             "ctl00$MainContentHolder$FormatType": format.form_value,
         }
 
@@ -526,7 +530,9 @@ class FFIECDownloader:
             DownloadResult
         """
         latest_period = self.get_latest_period(product)
-        return self.download(product, latest_period, format)
+        result = self.download(product, latest_period, format)
+        assert isinstance(result, DownloadResult)
+        return result
 
     def download_cdr_single_period(
         self, quarter: str, format: FileFormat = FileFormat.XBRL
@@ -542,7 +548,9 @@ class FFIECDownloader:
         Returns:
             DownloadResult
         """
-        return self.download(Product.CALL_SINGLE, quarter, format)
+        result = self.download(Product.CALL_SINGLE, quarter, format)
+        assert isinstance(result, DownloadResult)
+        return result
 
     def download_ubpr_single_period(
         self, quarter: str, format: FileFormat = FileFormat.XBRL
@@ -558,9 +566,11 @@ class FFIECDownloader:
         Returns:
             DownloadResult
         """
-        return self.download(Product.UBPR_RATIO_SINGLE, quarter, format)
+        result = self.download(Product.UBPR_RATIO_SINGLE, quarter, format)
+        assert isinstance(result, DownloadResult)
+        return result
 
-    def get_bulk_data_sources_cdr(self) -> Dict[str, Union[str, List[str]]]:
+    def get_bulk_data_sources_cdr(self) -> Dict[str, Union[str, List[str], None]]:
         """
         Get CDR bulk data source information
         Matches your existing /query/bulk_data_sources/cdr endpoint
@@ -569,13 +579,14 @@ class FFIECDownloader:
             Dictionary with published date and available quarters
         """
         periods = self.select_product(Product.CALL_SINGLE)
+        published_date: Optional[str] = periods[0].date_str if periods else None
 
         return {
-            "published_date": periods[0].date_str if periods else None,
+            "published_date": published_date,
             "available_quarters": [p.yyyymmdd for p in periods],
         }
 
-    def get_bulk_data_sources_ubpr(self) -> Dict[str, Union[str, List[str]]]:
+    def get_bulk_data_sources_ubpr(self) -> Dict[str, Union[str, List[str], None]]:
         """
         Get UBPR bulk data source information
         Matches your existing /query/bulk_data_sources/ubpr endpoint
@@ -584,9 +595,10 @@ class FFIECDownloader:
             Dictionary with published date and available quarters
         """
         periods = self.select_product(Product.UBPR_RATIO_SINGLE)
+        published_date: Optional[str] = periods[0].date_str if periods else None
 
         return {
-            "published_date": periods[0].date_str if periods else None,
+            "published_date": published_date,
             "available_quarters": [p.yyyymmdd for p in periods],
         }
 

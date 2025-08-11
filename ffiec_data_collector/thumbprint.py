@@ -49,17 +49,17 @@ class PageThumbprint:
     # Fields with default values must come after required fields
     version: str = "1.0"
     viewstate_generator_value: Optional[str] = None
-    form_elements: List[FormElement] = None
-    products: List[Dict[str, str]] = None
+    form_elements: Optional[List[FormElement]] = None
+    products: Optional[List[Dict[str, str]]] = None
     date_format_pattern: Optional[str] = None
-    download_button_ids: List[str] = None
-    radio_button_ids: List[str] = None
-    javascript_files: List[str] = None
+    download_button_ids: Optional[List[str]] = None
+    radio_button_ids: Optional[List[str]] = None
+    javascript_files: Optional[List[str]] = None
     uses_dopostback: bool = False
     uses_webform_postback: bool = False
     structural_hash: Optional[str] = None
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         """Calculate structural hash after initialization"""
         if not self.structural_hash:
             self.structural_hash = self.calculate_hash()
@@ -382,7 +382,7 @@ class ThumbprintValidator:
 
         for page_type, config in self.KNOWN_THUMBPRINTS.items():
             try:
-                results[page_type] = self.validate(config["url"], page_type)
+                results[page_type] = self.validate(str(config["url"]), page_type)
             except Exception as e:
                 results[page_type] = {"valid": False, "error": str(e)}
 
@@ -412,7 +412,7 @@ class ValidatedFFIECDownloader:
         self.validator = ThumbprintValidator()
         self.skip_validation = skip_validation
 
-    def download(self, *args, **kwargs):
+    def download(self, *args: Any, **kwargs: Any) -> Any:
         """
         Download with validation
 
@@ -435,6 +435,25 @@ class ValidatedFFIECDownloader:
 
         return self.downloader.download(*args, **kwargs)
 
+    def download_latest(self, *args: Any, **kwargs: Any) -> Any:
+        """Download latest with validation"""
+        if not self.skip_validation:
+            validation_result = self.validator.validate(
+                "https://cdr.ffiec.gov/public/pws/downloadbulkdata.aspx",
+                "bulk_download",
+            )
+
+            if not validation_result["valid"]:
+                raise WebpageChangeException(
+                    "Cannot proceed with download - webpage structure has changed. "
+                    "Please update the downloader to handle new structure."
+                )
+
+            if validation_result.get("warnings"):
+                print(f"Warnings: {', '.join(validation_result['warnings'])}")
+
+        return self.downloader.download_latest(*args, **kwargs)
+
 
 # CLI tool for thumbprint management
 if __name__ == "__main__":
@@ -450,7 +469,9 @@ if __name__ == "__main__":
             for page_type, config in validator.KNOWN_THUMBPRINTS.items():
                 print(f"Capturing thumbprint for {page_type}...")
                 try:
-                    thumbprint = validator.capture_thumbprint(config["url"], page_type)
+                    thumbprint = validator.capture_thumbprint(
+                        str(config["url"]), page_type
+                    )
                     filepath = validator.thumbprint_dir / f"{page_type}_thumbprint.json"
                     thumbprint.save(filepath)
                     print(f"  Saved to {filepath}")
