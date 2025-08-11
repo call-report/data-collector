@@ -1,0 +1,86 @@
+[project]
+name = "ffiec-data-collector"
+version = "2.0.0"
+description = "Lightweight Python library for collecting bulk FFIEC CDR data"
+readme = "README.md"
+license = "MPL-2.0"
+requires-python = ">=3.8"
+authors = [
+    {name = "Michael", email = "michael@civicforge.solutions"},
+]
+keywords = ["ffiec", "banking", "financial", "data", "cdr", "ubpr"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Office/Business :: Financial",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "requests>=2.28.0",
+    "python-dateutil>=2.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/call-report/ffiec-data-collector"
+Documentation = "https://ffiec-data-collector.readthedocs.io"
+Repository = "https://github.com/call-report/ffiec-data-collector"
+Issues = "https://github.com/call-report/ffiec-data-collector/issues"
+
+[project.scripts]
+ffiec-download = "ffiec_data_collector.cli:main"
+ffiec-validate = "ffiec_data_collector.thumbprint:validate_cli"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=0.990",
+    "jupyter>=1.0.0",
+    "notebook>=6.5.0",
+    "build>=0.10.0",
+    "twine>=4.0.0",
+    "ipykernel>=6.30.1",
+    "uv>=0.8.8",
+]
+docs = [
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "sphinx-autodoc-typehints>=1.19.0",
+    "myst-parser>=0.18.0",
+    "nbsphinx>=0.8.0",
+]
+validation = [
+    "jsonschema>=4.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ffiec_data_collector*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
