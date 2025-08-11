@@ -1,0 +1,70 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev]"
+
+    - name: Run linting
+      run: |
+        black --check ffiec_data_collector/
+        flake8 ffiec_data_collector/
+
+    - name: Run type checking
+      run: mypy ffiec_data_collector/
+
+    - name: Run tests
+      run: pytest tests/ -v --tb=short
+
+    - name: Test CLI commands
+      run: |
+        ffiec-download --help
+        ffiec-validate --help
+
+  build-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install build dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+    
+    - name: Build package
+      run: python -m build
+    
+    - name: Check package
+      run: twine check dist/*
+    
+    - name: Test installation from built package
+      run: |
+        pip install dist/*.whl
+        python -c "import ffiec_data_collector; print(f'Installed version: {ffiec_data_collector.__version__}')"
