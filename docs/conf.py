@@ -13,8 +13,8 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'FFIEC Data Collector'
 copyright = '2025, Michael'
 author = 'Michael <michael@civicforge.solutions>'
-release = '2.0.0rc1'
-version = '2.0.0rc1'
+release = '2.0.0rc2'
+version = '2.0.0rc2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
