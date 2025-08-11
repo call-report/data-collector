@@ -38,7 +38,7 @@ This repository has been prepared for public distribution with the following key
 
 **Package Name**: `ffiec-data-collector`  
 **Version**: 2.0.0  
-**Python Support**: 3.8+  
+**Python Support**: 3.10+  
 **License**: Mozilla Public License 2.0  
 **Repository**: https://github.com/call-report/ffiec-data-collector  
 **Documentation**: https://ffiec-data-collector.readthedocs.io/  
